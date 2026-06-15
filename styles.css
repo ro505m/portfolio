@@ -1,0 +1,97 @@
+/* Glass Effect */
+.glass {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+.floating { animation: float 4s ease-in-out infinite; }
+
+/* Scrollbar Styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 3px; }
+
+/* Mobile Menu */
+#mobileMenuBtn {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    #mobileMenuBtn {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    #mobileMenuBtn span {
+        width: 1.5rem;
+        height: 0.25rem;
+        background: white;
+        border-radius: 0.125rem;
+        transition: all 0.3s ease;
+    }
+
+    #mobileMenuBtn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(0.5rem, 0.625rem);
+    }
+
+    #mobileMenuBtn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #mobileMenuBtn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(0.375rem, -0.625rem);
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(12px);
+        padding: 1rem;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        z-index: 40;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links > * {
+        padding: 0.75rem 1rem;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+
+    #langToggle {
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+}
