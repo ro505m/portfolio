@@ -96,6 +96,7 @@ const i18n = {
         ctDesc: "I'm currently open to software engineering roles and building advanced systems requiring optimized architectures. Reach out directly!",
         ctMail: "Drop an Email",
         whatsapp: "WhatsApp",
+        downloadPdf: "Download CV",
         projectsData: [
             {
                 title: "High-Performance Flight Data Dashboard (30M+ Records)",
@@ -148,6 +149,7 @@ const i18n = {
         ctDesc: "أنا متاح دائماً للفرص الوظيفية المتميزة، أو لبناء ميزات معقدة تتطلب كفاءة برمجية عالية. تواصل معي مباشرة!",
         ctMail: "راسلني عبر البريد",
         whatsapp: "واتساب",
+        downloadPdf: "تحميل السيرة الذاتية",
         projectsData: [
             {
                 title: "لوحة بيانات رحلات الطيران (30M+ Records)",
@@ -241,6 +243,10 @@ function updateLocalization(lang) {
 
     // WhatsApp button translation
     const whatsappTextEl = document.getElementById('whatsappText'); if (whatsappTextEl) whatsappTextEl.innerText = data.whatsapp;
+
+    // PDF Download button translation (title attribute)
+    const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+    if (downloadPdfBtn) downloadPdfBtn.title = data.downloadPdf;
 
     // Render Dynamic Project Grid Cards
     const container = document.getElementById('projectsContainer');
